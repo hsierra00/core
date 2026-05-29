@@ -11,13 +11,17 @@
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
   // Port 5683 udp is used by Shelly integration
-  "appPort": ["8123:8123", "5683:5683/udp"],
+  "appPort": ["8123:8123", "5683:5683/udp","8082:8082","54112:54112"],
   "runArgs": [
     "-e",
     "GIT_EDITOR=code --wait",
     "--security-opt",
     "label=disable"
   ],
+   "mounts": [
+    "source=D:/Work/home-assistant/automa-domo/automa_enterprise,target=/workspaces/core/config/custom_components/automa_enterprise,type=bind,consistency=cached"
+    //"source=C:/Work/home-assistant/frontend/frontend,target=/workspaces/frontend,type=bind,consistency=cached"
+ ],
   "customizations": {
     "vscode": {
       "extensions": [
